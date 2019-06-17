@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="col">
+
+    <h1>listado</h1><br>
+    <button routerLink="/home/nuevo"
+    class="btn btn-warning">Nuevo</button>
+    <hr>
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">LASTNAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">TELEFONO</th>
+            <th scope="col">PASSWORD</th>
+            <th scope="col">ACCIONES</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of user">
+            <th scope="row">{{  item.id }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.lastname }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.telefono }}</td>
+            <td>{{ item.password  }}</td>
+            <td>
+              <button [routerLink]="['/home/',item.id]"
+              class="btn btn-outline-info">Editar</button>
+              <button (click)="borrarUser(item)"
+              class="btn btn-outline-danger">Eliminar</button>
+            </td>
+
+          </tr>
+          
+        </tbody>
+      </table>
+
+
+  </div>
+</div>
