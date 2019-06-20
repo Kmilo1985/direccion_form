@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,9 +25,7 @@ import { DireccionComponent } from './components/direccion/direccion.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
-  ],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
